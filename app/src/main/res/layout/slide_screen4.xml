@@ -17,7 +17,6 @@
             android:textSize="@dimen/slide_title"
             android:layout_marginBottom="@dimen/slide_title"
             android:textStyle="bold" />
-
         <ImageView
             android:layout_width="304dp"
             android:layout_height="157dp"
