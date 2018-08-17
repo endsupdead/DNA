@@ -9,6 +9,11 @@
         android:layout_centerInParent="true"
         android:gravity="center_horizontal"
         android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="304dp"
+            android:layout_height="157dp"
+            android:src="@drawable/proto" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -17,10 +22,6 @@
             android:textSize="@dimen/slide_title"
             android:layout_marginBottom="@dimen/slide_title"
             android:textStyle="bold" />
-        <ImageView
-            android:layout_width="304dp"
-            android:layout_height="157dp"
-            android:src="@drawable/proto" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
