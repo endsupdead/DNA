@@ -98,7 +98,7 @@ public class NavigationActivity extends AppCompatActivity implements OnMapReadyC
                 return;
             }
         }
-        mGoogleMap.setMyLocationEnabled(true);
+       mGoogleMap.setMyLocationEnabled(true);
 
         googleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(LocationServices.API)
@@ -119,11 +119,12 @@ public class NavigationActivity extends AppCompatActivity implements OnMapReadyC
         }
 
         marker = mGoogleMap.addMarker(new MarkerOptions()
-                                        .title(name)
-                                        .position(new LatLng(lat,lng)));
+                .title(name)
+                .position(new LatLng(lat,lng)));
     }
 
-    int PLACE_PICKER_REQUEST = 1;
+    int
+            PLACE_PICKER_REQUEST = 1;
 
     public void geoLocate(View view) {
 
@@ -132,9 +133,8 @@ public class NavigationActivity extends AppCompatActivity implements OnMapReadyC
             Intent intent;
             intent = builder.build(this);
             startActivityForResult(intent, PLACE_PICKER_REQUEST);
-        } catch (GooglePlayServicesRepairableException e) {
-            e.printStackTrace();
-        } catch (GooglePlayServicesNotAvailableException e) {
+            initMap();
+        } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
             e.printStackTrace();
         }
 
@@ -163,7 +163,7 @@ public class NavigationActivity extends AppCompatActivity implements OnMapReadyC
     public void onConnected(@Nullable Bundle bundle) {
         locationRequest = LocationRequest.create();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        locationRequest.setInterval(3000);
+        locationRequest.setInterval(1000);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {

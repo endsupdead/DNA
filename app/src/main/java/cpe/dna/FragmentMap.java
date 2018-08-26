@@ -11,9 +11,6 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-/**
- * Created by anthony on 2/17/18.
- */
 
 public class FragmentMap extends Fragment {
     private static final String TAG = "TAB2";
@@ -49,6 +46,10 @@ public class FragmentMap extends Fragment {
                 if (gridViewString[+i].equals("NAVIGATION")){
                     Intent intentParameters = new Intent(getContext(),NavigationActivity.class);
                     startActivity(intentParameters);
+                }
+                else if (gridViewString[+i].equals("GAS STATIONS")){
+                    Intent intentMap = new Intent(getContext(),MapsActivity.class);
+                    startActivity(intentMap);
                 }
                 else{
                     Toast.makeText(getContext(),"Sorry!The page you're trying to access is under construction.",Toast.LENGTH_LONG).show();
